@@ -17,6 +17,8 @@ if (!function_exists('array_replace_recursive'))
 {
   function array_replace_recursive($array, $array1)
   {
+    if (!function_exists('recurse'))
+    {
     function recurse($array, $array1)
     {
       foreach ($array1 as $key => $value)
@@ -36,7 +38,7 @@ if (!function_exists('array_replace_recursive'))
       }
       return $array;
     }
-  
+   }  
     // handle the arguments, merge one by one
     $args = func_get_args();
     $array = $args[0];
